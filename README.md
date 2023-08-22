@@ -62,7 +62,7 @@ for priority in house_priorities:
     if priority[1] != 0:
         ratio = priority[0] / priority[1]
     else:
-        ratio = 0  # Handle division by zero
+        ratio = 0  
     rescue_ratios.append(ratio)
 
 
