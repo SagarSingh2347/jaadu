@@ -56,7 +56,15 @@ for image in images:
     house_counts.append((count_blue, count_red))
     house_priorities.append((priority_blue, priority_red))
 image_names = ['image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7', 'image8', 'image9', 'image10']
-rescue_ratios = [priority[0] / priority[1] for priority in house_priorities]
+rescue_ratios = []
+
+for priority in house_priorities:
+    if priority[1] != 0:
+        ratio = priority[0] / priority[1]
+    else:
+        ratio = 0  # Handle division by zero
+    rescue_ratios.append(ratio)
+
 
 sorted_images = sorted(zip(image_names, rescue_ratios), key=lambda x: x[1], reverse=True)
 
